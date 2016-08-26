@@ -108,3 +108,30 @@ But as you remember, we've mentioned so far only one declaration file angular2-m
 
 TypeScript's type-checking bases on the "shapes" that types have. And interfaces are TypeScript's means to describe these type "shapes", which is sometimes called "duck typing". More on that you can read [here](http://www.typescriptlang.org/docs/handbook/interfaces.html).
 
+##Step 8. User accounts, authentication and permissions
+
+###1. Removing Insecure
+
+###2. User Accounts
+  1.  [Meteor accounts](https://www.meteor.com/accounts) `meteor add accounts-password`
+  2.  [angular2-meteor-accounts-ui]() `meteor npm install --save angular2-meteor-accounts-ui`
+  3.  [allow](http://docs.meteor.com/api/collections.html#Mongo-Collection-allow)
+  4.  [Meteor.user()](http://docs.meteor.com/api/accounts.html#Meteor-user) and [Meteor.userId()](http://docs.meteor.com/?__hstc=219992390.628935fcb581e9e68b0a248f0a72d0a6.1471531140200.1472223168425.1472225055370.7&__hssc=219992390.2.1472225055370&__hsfp=3312583871#/full/meteor_users)
+
+###3. Object.assign()
+`Object.assign({}, this.addForm.value, { owner: Meteor.userId() })` Insert `{owner: Meteor.userId()}` to `this.addForm.value`.
+
+###4. canActivate
+CanActivate is a one of three guard types in the new router. It decides if a route can be activated.
+
+  We created a new provider called `CanActivateForLoggedIn` that contains a boolean value with login state. As you can see we specified only the name of that provider inside canActive property.
+
+  Guards can receive more than one provider.
+
+###5.  InjectUser
+If you place @InjectUser above the CarpoolsFormComponent it will inject a new user property:
+
+###6. Routing Permissions
+
+##Step 9 .
+

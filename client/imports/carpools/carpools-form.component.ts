@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { REACTIVE_FORM_DIRECTIVES, FormGroup, FormBuilder,  Validators } from '@angular/forms';
+import { Meteor } from 'meteor/meteor';
 
 import { Carpools } from '../../../both/collections/carpools.collection';
  
@@ -35,9 +36,13 @@ export class CarpoolsFormComponent implements OnInit {
 
 	addCarpool() {
 	    if (this.addForm.valid) {
-	      Carpools.insert(this.addForm.value);	 
-	      // XXX will be replaced by this.addForm.reset() in RC5+
-	      this.resetForm();
+	    	if (Meteor.userId()){
+	    		Carpools.insert(Object.assign({}, this.addForm.value, { owner: Meteor.userId() }));	 
+		      // XXX will be replaced by this.addForm.reset() in RC5+
+		      this.resetForm();
+	    	}else{
+	    		alert("Please log in to add a party");
+	    	}	      
 	    }else{
 	    	alert("All fileds are needed!");
 	    }

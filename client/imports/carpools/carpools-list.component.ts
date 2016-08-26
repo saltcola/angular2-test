@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { Mongo } from 'meteor/mongo';
+import { LoginButtons } from 'angular2-meteor-accounts-ui';
 
 import { Carpools } from '../../../both/collections/carpools.collection';
 import {Carpool} from '../../../both/interfaces/carpool.interface.ts';
@@ -11,7 +12,7 @@ import template from './carpools-list.component.html';
 @Component({
   selector: 'carpools-list',
   template,
-  directives: [CarpoolsFormComponent, ROUTER_DIRECTIVES]
+  directives: [CarpoolsFormComponent, ROUTER_DIRECTIVES, LoginButtons]
 })
 
 export class CarpoolsListComponent implements OnInit {
