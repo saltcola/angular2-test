@@ -31,24 +31,24 @@ You can read more about how modules work and how it's based on CommonJS [on the 
    This package handle the automatic bootstrap for Angular2-Meteor applications.
 
 ##Step 2.  Dynamic Template
-###[NgFor](https://angular.io/docs/ts/latest/api/common/index/NgFor-directive.html)
+###1.  [NgFor](https://angular.io/docs/ts/latest/api/common/index/NgFor-directive.html)
 
-###[constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
+###2.  [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
   The constructor method is a special method for creating and initializing an object created with a class.
 
 ##Step 3.  3-Way data binding
-###[mongoDB](https://docs.mongodb.com/?_ga=1.89267163.1171644026.1472217911)
+###1.  [mongoDB](https://docs.mongodb.com/?_ga=1.89267163.1171644026.1472217911)
 
-###[minimongo](https://atmospherejs.com/meteor/minimongo)
+###2.  [minimongo](https://atmospherejs.com/meteor/minimongo)
 
 ##Step 4.  Adding/removing objects and Angular event handling (Forms)
-###Component Architecture
+###1.  Component Architecture
   In Angular 2, we build a tree of components with the root __App__ component and child components stemming out of it down to the leaves.
 
-###[OnInit](https://angular.io/docs/ts/latest/api/core/index/OnInit-class.html)
+###2.  [OnInit](https://angular.io/docs/ts/latest/api/core/index/OnInit-class.html)
    It brings the ngOnInit method. It initialize the directive/component after Angular initializes the data-bound input properties. Angular will find and call methods like ngOnInit(), with or without the interfaces. Nonetheless, we strongly recommend adding interfaces to TypeScript directive classes in order to benefit from strong typing and editor tooling.
 
-###[Model-Driven Forms](http://blog.thoughtram.io/angular/2016/06/22/model-driven-forms-in-angular-2.html) and ['@angular/forms'](https://angular.io/docs/ts/latest/guide/forms.html)
+###3.  [Model-Driven Forms](http://blog.thoughtram.io/angular/2016/06/22/model-driven-forms-in-angular-2.html) and ['@angular/forms'](https://angular.io/docs/ts/latest/guide/forms.html)
   1.  [disableDeprecatedForms]()
   Since there was a breaking change in forms syntax, we should disable the ability of use deprecated API. We can achieve this by using disableDeprecatedForms function.
   2.  [provideForms]()
@@ -58,7 +58,7 @@ You can read more about how modules work and how it's based on CommonJS [on the 
   6.  [REACTIVE_FORM_DIRECTIVES]()
   7.  [Validators](), [Validators.required]()
 
-###Event Handlers
+###4.  Event Handlers
   1.  ngSubmit
   2.  click
 
@@ -133,5 +133,17 @@ If you place @InjectUser above the CarpoolsFormComponent it will inject a new us
 
 ###6. Routing Permissions
 
-##Step 9 .
+##Step 9.  Privacy and publish-subscribe functions
+
+###1. [Meteor.publish](http://docs.meteor.com/#/full/meteor_publish)
+###2. [Meteor.subscribe](http://docs.meteor.com/#/full/meteor_subscribe)
+###3. [MeteorComponent]()
+  MeteorComponent has two public methods: `subscribe` and `autorun`. If you inherit a component of this class and make use of these methods, you won't need to worry about cleanups: MeteorComponent will do them for you under the hood when it's needed.
+
+  These methods also have a convenient boolean parameter called `autoBind`, which goes lastly. As its name suggests, we can tell subscribe to run the subscription callback in the change detection zone by setting the parameter to true.
+
+###4.  Subscribe with Params
+###5.  buildQuery and buildQuery.call(this) // `isAvailable.call(this)`
+
+###6.  Search
 

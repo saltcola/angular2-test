@@ -3,6 +3,7 @@
       <strong>From</strong>: {{carpool.From}}  <strong>To</strong>: {{carpool.To}}</p>
       <p>Provider: {{carpool.Provider}}</p>
       <p>Contact: {{carpool.Contact}}</p>
+      <p>Public: {{carpool.public}}</p>
 
       <form *ngIf = "carpool"  (submit)="saveCarpool()">
 		<p>
@@ -25,6 +26,8 @@
 		  <label>Contact</label>
 		  <input type="text" [(ngModel)]="carpool.Contact" name="Contact">
 		 </p> 
+		 <label>Public</label>
+		 <input type="checkbox" [(ngModel)]="carpool.public"  name = "public"/>
 	 	 <button type="submit">Save</button>
 	 	 <a [routerLink]="['/']">Cancel</a>
 	</form>

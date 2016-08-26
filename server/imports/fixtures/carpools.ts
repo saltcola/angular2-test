@@ -9,21 +9,24 @@ export function loadCarpools() {
         'From' : 'Storrs',
         'To' : 'New York City',
         'Provider' : 'Tom',
-        'Contact' : '8605228976'
+        'Contact' : '8605228976',
+        'public' : true
       },
       {
         'Time' : '2016-9-11 5:00PM',
         'From' : 'Storrs',
         'To' : 'Boston',
         'Provider' : 'Jhon',
-        'Contact' : '8605228977'
+        'Contact' : '8605228977',
+        'public' : true
       },
       {
         'Time' : '2016-9-10 10:00AM',
         'From' : 'Storrs',
         'To' : 'Hartford',
         'Provider' : 'Emmy',
-        'Contact' : '8605234976'
+        'Contact' : '8605234976',
+        'public' : true
       }
     ];
  

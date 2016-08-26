@@ -6,4 +6,5 @@ export interface Carpool {
 	Provider: string;
 	Contact : string;
 	owner?: string;
+	public: boolean;
 }

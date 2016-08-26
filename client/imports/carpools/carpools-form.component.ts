@@ -22,7 +22,8 @@ export class CarpoolsFormComponent implements OnInit {
 			From: ['', Validators.required], 
 			To: ['', Validators.required], 
 			Provider: ['', Validators.required], 
-			Contact : ['', Validators.required] 
+			Contact : ['', Validators.required],
+			public: [false] 
 		});
 	}
 
@@ -32,6 +33,7 @@ export class CarpoolsFormComponent implements OnInit {
 	    this.addForm.controls['To']['updateValue']('');
 	    this.addForm.controls['Provider']['updateValue']('');
 	    this.addForm.controls['Contact']['updateValue']('');
+	    this.addForm.controls['public']['updateValue'](false);
 	}
 
 	addCarpool() {
