@@ -1,0 +1,23 @@
+<form [formGroup]="addForm"  (ngSubmit)="addCarpool()">
+	<p>
+	  <label>Time</label>
+	  <input type="text" formControlName="Time">
+	</p>
+	<p>
+	  <label>From</label>
+	  <input type="text" formControlName="From">
+	 </p>
+	 <p>
+	  <label>To</label>
+	  <input type="text" formControlName="To">
+	</p>
+	<p>
+	  <label>Provider</label>
+	  <input type="text" formControlName="Provider">
+	 </p>
+	 <p>
+	  <label>Contact</label>
+	  <input type="text" formControlName="Contact">
+	 </p> 
+ 	 <button type="submit">Add</button>
+</form>
