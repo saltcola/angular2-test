@@ -1,13 +1,3 @@
 <div>
-<carpools-form></carpools-form>
-  <ul>
-    <li *ngFor="let carpool of carpools">
-      Provider: {{carpool.Provider}}
-      <p>Time: {{carpool.Time}}</p>
-      <p>From: {{carpool.From}}</p>
-      <p>To: {{carpool.To}}</p>
-      <p>Contact: {{carpool.Contact}}</p>
-      <button (click)="removeCarpool(carpool)">X</button>
-    </li>
-  </ul>
+	<router-outlet></router-outlet>
 </div>

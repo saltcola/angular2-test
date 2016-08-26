@@ -1,27 +1,12 @@
 import { Component } from '@angular/core';
-import { Mongo } from 'meteor/mongo';
-
-import { Carpools } from '../both/collections/carpools.collection';
-import { CarpoolsFormComponent } from './imports/carpools/carpools-form.component.ts'
+import { ROUTER_DIRECTIVES } from '@angular/router';
  
 import template from './app.component.html';
  
 @Component({
   selector: 'app',
   template,
-  directives: [CarpoolsFormComponent]
+  directives: [ROUTER_DIRECTIVES]
 })
 
-export class AppComponent {
-
-	carpools: Mongo.Cursor<any>;
-
-  constructor() {
-  	this.carpools = Carpools.find();
-   
-  }
-
-  removeCarpool(carpool) {
-    Carpools.remove(carpool._id);
-  }
-}
+export class AppComponent {}
