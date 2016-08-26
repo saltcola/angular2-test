@@ -3,7 +3,7 @@ import {Meteor} from 'meteor/meteor';
 import {Counts} from 'meteor/tmeasday:publish-counts';
 
 
-function buildQuery(carpoolId?: string, To?: string): Object {
+function buildQuery(carpoolId?: string, destination?: string): Object {
   const isAvailable = {
     $or: [
       { 'public': true },
@@ -21,15 +21,15 @@ function buildQuery(carpoolId?: string, To?: string): Object {
     return { $and: [{ _id: carpoolId }, isAvailable] };
   }
 
-  const searchRegEx = { '$regex': '.*' + (To || '') + '.*', '$options': 'i' };
+  const searchRegEx = { '$regex': '.*' + (destination || '') + '.*', '$options': 'i' };
 
   return { $and: [{ To: searchRegEx }, isAvailable] };
 }
 
-Meteor.publish('carpools', function(options: any, To?: string) {
-  const selector = buildQuery.call(this, null, To);
+Meteor.publish('carpools', function(options: any, destination?: string) {
+  const selector = buildQuery.call(this, null, destination);
 
-  Counts.publish(this, 'numberOfParties', Carpools.find(selector), { noReady: true });
+  Counts.publish(this, 'numberOfCarpools', Carpools.find(selector), { noReady: true });
 
   return Carpools.find(selector, options);
 });

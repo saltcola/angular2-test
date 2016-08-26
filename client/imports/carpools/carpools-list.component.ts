@@ -54,10 +54,12 @@ export class CarpoolsListComponent extends MeteorComponent implements OnInit {
 			this.loading = true;
 			this.paginationService.setCurrentPage(this.paginationService.defaultId, this.curPage.get());
 
-			this.subscribe('carpools', options, this.destination.get(),() => {
+			this.subscribe('carpools', options, this.destination.get(), () => {
 		      	this.carpools = Carpools.find({}, {sort: { From: this.stringOrder.get() }});
 		      	this.loading = false;
 		    	}, true);
+
+
 		});
 
 		this.autorun(() => {
