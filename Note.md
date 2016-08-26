@@ -147,3 +147,39 @@ If you place @InjectUser above the CarpoolsFormComponent it will inject a new us
 
 ###6.  Search
 
+##Step 10.   [Deploying your app](http://guide.meteor.com/deployment.html#deployment-options)
+
+##Step 11.   [Running your app on Android or iOS with PhoneGap](http://www.angular-meteor.com/tutorials/socially/angular2/running-your-app-on-android-or-ios-with-phoneGap)
+
+##Step 12.   Search, sort, pagination and reactive vars
+###1.  Pagination
+###2.  [Mongo Collection query options](http://docs.meteor.com/#/full/find)
+###3.  Reactive variables
+We'll need to re-subscribe with new options each time the page number changes. Thanks to Meteor, we can easily update subscriptions with the help of Meteor's reactive variables and MeteorComponent's reactive API. 
+###4.  this.autorun
+###5.  Pagination UI
+
+As this paragraph name suggests, the next logical thing to do would be to implement a pagination UI, which consists of, at least, a list of page links at the bottom of every page, so that the user can switch pages by clicking on these links.
+
+Creating a pagination component is not a trivial task and not one of the primary goals of this tutorial, so we are going to make use of an already existing package with Angular 2 pagination components. Run the following line to add this package:
+
+`$ meteor npm install ng2-pagination --save`
+
+This package's pagination mark-up follows the structure of the Bootstrap pagination component, so you can change its look simply by using proper CSS styles. It's worth noting, though, that this package has been created with the only this tutorial in mind. It misses a lot of features that would be quite useful in the real world, for example, custom templates.
+Ng2-Pagination consists of three main parts:
+
+-  pagination controls that render a list of links
+-  a pagination service to manipulate logic programmatically
+-  a pagination pipe component, which can be added in any component template, with the main goal to transform a list of items according to the current state of the pagination service and show current page of items on UI
+
+###6.  PaginationService and PaginationControlsCmp
+###7.  pageChange events
+###8.  Generating Mock Data [anti:fake](https://atmospherejs.com/anti/fake)
+
+###9.  [tmeasday:publish-counts](https://github.com/percolatestudio/publish-counts)
+
+
+
+
+
+

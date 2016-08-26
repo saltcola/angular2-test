@@ -1,10 +1,19 @@
 <div>
 <login-buttons></login-buttons>
 <input type="text" #searchtext placeholder="Search by destination">
-  <button type="button" (click)="search(searchtext.value)">Search</button>
+<button type="button" (click)="search(searchtext.value)">Search</button>
 <carpools-form></carpools-form>
 
-  <ul>
+<h1>Carpools:</h1>
+ 
+  <div>
+    <select #sort (change)="changeSortOrder(sort.value)">
+      <option value="1" selected>Ascending</option>
+      <option value="-1">Descending</option>
+    </select>
+  </div>
+
+  <ul *ngIf="!loading">
     <li *ngFor="let carpool of carpools">
       <a [routerLink]="['/carpool', carpool._id]"><strong>Time</strong>: {{carpool.Time}}  
       <strong>From</strong>: {{carpool.From}}  <strong>To</strong>: {{carpool.To}}</a>
@@ -14,4 +23,5 @@
       <button (click)="removeCarpool(carpool)">X</button>
     </li>
   </ul>
+  <pagination-controls (pageChange)="onPageChanged($event)"></pagination-controls>
 </div>

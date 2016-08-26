@@ -2,6 +2,7 @@ accounts-base@1.2.10
 accounts-password@1.2.14
 allow-deny@1.0.5
 angular2-compilers@0.6.0
+anti:fake@0.4.1
 autoupdate@1.2.11
 babel-compiler@6.9.0
 babel-runtime@0.1.10
@@ -84,6 +85,7 @@ standard-minifier-css@1.1.8
 standard-minifier-js@1.1.8
 templating@1.1.14
 templating-tools@1.0.4
+tmeasday:publish-counts@0.7.3
 tmeasday:test-reporter-helpers@0.2.1
 tracker@1.1.0
 ui@1.0.11
