@@ -1,8 +1,9 @@
 import { Carpools } from '../../../both/collections/carpools.collection';
+import {Carpool} from '../../../both/interfaces/carpool.interface.ts';
  
 export function loadCarpools() {
   if (Carpools.find().count() === 0) {
-    const carpools = [
+    const carpools: Carpool[] = [
       {
         'Time' : '2016-9-10 3:00PM',
         'From' : 'Storrs',

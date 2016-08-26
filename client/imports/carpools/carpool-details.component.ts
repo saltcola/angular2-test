@@ -3,6 +3,7 @@ import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 import { Tracker } from 'meteor/tracker';
 
 import { Carpools } from '../../../both/collections/carpools.collection';
+import {Carpool} from '../../../both/interfaces/carpool.interface.ts';
 import template from './carpool-details.component.html';
  
 @Component({
@@ -12,8 +13,7 @@ import template from './carpool-details.component.html';
 })
 export class CarpoolDetailsComponent implements OnInit {
 	carpoolId : string;
-	// carpool: Mongo.Cursor<any>;
-	// _id : string;
+	carpool: Carpool;
 
 	constructor(private route: ActivatedRoute, private ngZone: NgZone) {}
 

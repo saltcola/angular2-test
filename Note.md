@@ -83,6 +83,28 @@ You can read more about how modules work and how it's based on CommonJS [on the 
     The syntax looks a bit different, using both square and rounded brackets: ` [(ngModel)]="carpool.Time"`. ngModel binds to the party properties and fills out the inputs, and vice versa.
 
 ##Step 7. Folder structure
+###1. TypeScript
+  TypeScript is a rather new language that has been growing in popularity since it's creation 3 years ago. TypeScript has one of the fullest implementations of ES2015 features on the market: including some experimental features, pseudo type-checking and a rich toolset developed by Microsoft and the TypeScript community. It has support already in all major IDEs including Visual Studio, WebStorm, Sublime, Atom, etc.
 
+  One of the biggest issues in JavaScript is making code less bug-prone and more suitable for big projects. In the OOP world, well-known solutions include modularity and strict type-checking. While OOP is available in JavaScript in some way, it turned out to be very hard to create good type-checking. One always needs to impose a certain number of rules to follow to make a JavaScript compiler more effective. For many years, we’ve seen around a number of solutions including the Closure Compiler and GWT from Google, a bunch of C#-to-JavaScript compilers and others.
 
+  This was, for sure, one of the problems the TypeScript team were striving to solve: to create a language that would inherit the flexibility of JavaScript while, at the same time, having effective and optional type-checking with minimum effort required from the user.
+
+###2. Type Declaration Files
+  As you may have noticed, Angular2-Meteor package itself installs a number of type declaration (.d.ts) files into the typings folder. These are files of a special kind where you describe the interfaces for your classes along with signatures of the methods and types of the parameters they take, so that TypeScript will be able to refer to these files to verify the correctness of your class's API. Of course, the flexibility is still there so if you don’t want to declare types you can skip them right away.
+
+Keep in mind, type-checking is not delivered in the outputted JavaScript. It is only extra sugar for your development environment, and adds no weight to the outputted .js file.
+
+Some of the typings files have names angular2.d.ts and meteor.d.ts, which, as you can guess, are used to verify that API of Meteor and Angular 2 are being used correctly in your code
+
+But as you remember, we've mentioned so far only one declaration file angular2-meteor.d.ts and used it in the TypeScript config (on the first step), that's thanks to a special TypeScript syntax construction that can link together one declaration files with other declaration files as well as TypeScript files. If you look inside of angular2-meteor.d.ts you'll see Angular 2 and Meteor declaration files are linked there by:
+
+```js
+/// <reference path="../angular2/angular2.d.ts" />
+/// <reference path="../meteor/meteor.d.ts" />
+```
+
+###3. Interfaces
+
+TypeScript's type-checking bases on the "shapes" that types have. And interfaces are TypeScript's means to describe these type "shapes", which is sometimes called "duck typing". More on that you can read [here](http://www.typescriptlang.org/docs/handbook/interfaces.html).
 
