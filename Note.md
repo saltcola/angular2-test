@@ -2,7 +2,7 @@
 
 [TOC]
 
-##1. Bootstrapping
+##Step 1. Bootstrapping
 ###1.  [Meteor](https://www.meteor.com) :
   Meteor is an open source platform for web, mobile, and desktop. If you use mac, you can use `$ curl https://install.meteor.com/ | sh` to install.
 
@@ -30,18 +30,18 @@ You can read more about how modules work and how it's based on CommonJS [on the 
 ###6.  [angular2-meteor-auto-bootstrap](https://www.npmjs.com/package/angular2-meteor-auto-bootstrap):
    This package handle the automatic bootstrap for Angular2-Meteor applications.
 
-## 2.  Dynamic Template
+##Step 2.  Dynamic Template
 ###[NgFor](https://angular.io/docs/ts/latest/api/common/index/NgFor-directive.html)
 
 ###[constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
   The constructor method is a special method for creating and initializing an object created with a class.
 
-## 3.  3-Way data binding
+##Step 3.  3-Way data binding
 ###[mongoDB](https://docs.mongodb.com/?_ga=1.89267163.1171644026.1472217911)
 
 ###[minimongo](https://atmospherejs.com/meteor/minimongo)
 
-## 4.  Adding/removing objects and Angular event handling (Forms)
+##Step 4.  Adding/removing objects and Angular event handling (Forms)
 ###Component Architecture
   In Angular 2, we build a tree of components with the root __App__ component and child components stemming out of it down to the leaves.
 
@@ -62,7 +62,7 @@ You can read more about how modules work and how it's based on CommonJS [on the 
   1.  ngSubmit
   2.  click
 
-## 5.  Routing & Multiple Views (['@angular/router'](https://angular.io/docs/ts/latest/guide/router.html))
+##Step 5.  Routing & Multiple Views (['@angular/router'](https://angular.io/docs/ts/latest/guide/router.html))
 ###1.  RouterConfig
   We need to create an array of route definitions. The RouterConfig interface comes with help. This way we can be sure that properties of that object are correctly used.
 ###2.  provideRouter
@@ -73,6 +73,16 @@ You can read more about how modules work and how it's based on CommonJS [on the 
 ###7.  [Class MetaData](http://blog.thoughtram.io/angular/2015/09/17/resolve-service-dependencies-in-angular-2.html)
 ###8.  [Tracker.autorun](http://docs.meteor.com/api/tracker.html#Tracker-autorun)
 ###9.  [NgZone](https://angular.io/docs/js/latest/api/core/index/NgZone-class.html)
+
+##Step 6.  Bind one object
+###1.  Two-Way Data Binding
+  1.  *ngIf
+  2.  ngModel
+  ngModel binds a HTML form to the component's model, which can be an object of any type, in comparison to the Model-Driven binding where the FormGroup instance is used.
+
+    The syntax looks a bit different, using both square and rounded brackets: ` [(ngModel)]="carpool.Time"`. ngModel binds to the party properties and fills out the inputs, and vice versa.
+
+##Step 7. Folder structure
 
 
 

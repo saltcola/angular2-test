@@ -3,5 +3,29 @@
       <strong>From</strong>: {{carpool.From}}  <strong>To</strong>: {{carpool.To}}</p>
       <p>Provider: {{carpool.Provider}}</p>
       <p>Contact: {{carpool.Contact}}</p>
-      <a href="/"> Back </a>
+
+      <form *ngIf = "carpool"  (submit)="saveCarpool()">
+		<p>
+		  <label>Time</label>
+		  <input type="text" [(ngModel)]="carpool.Time" name="Time">
+		</p>
+		<p>
+		  <label>From</label>
+		  <input type="text" [(ngModel)]="carpool.From" name="From">
+		 </p>
+		 <p>
+		  <label>To</label>
+		  <input type="text" [(ngModel)]="carpool.To" name="To">
+		</p>
+		<p>
+		  <label>Provider</label>
+		  <input type="text" [(ngModel)]="carpool.Provider" name="Provider">
+		 </p>
+		 <p>
+		  <label>Contact</label>
+		  <input type="text" [(ngModel)]="carpool.Contact" name="Contact">
+		 </p> 
+	 	 <button type="submit">Save</button>
+	 	 <a [routerLink]="['/']">Cancel</a>
+	</form>
 </header>

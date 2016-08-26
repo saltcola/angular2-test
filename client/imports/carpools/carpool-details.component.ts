@@ -1,5 +1,5 @@
 import { Component, NgZone, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 import { Tracker } from 'meteor/tracker';
 
 import { Carpools } from '../../../both/collections/carpools.collection';
@@ -7,10 +7,13 @@ import template from './carpool-details.component.html';
  
 @Component({
   selector: 'carpool-details',
-  template
+  template,
+  directives: [ROUTER_DIRECTIVES]
 })
 export class CarpoolDetailsComponent implements OnInit {
 	carpoolId : string;
+	// carpool: Mongo.Cursor<any>;
+	// _id : string;
 
 	constructor(private route: ActivatedRoute, private ngZone: NgZone) {}
 
@@ -24,5 +27,20 @@ export class CarpoolDetailsComponent implements OnInit {
 	          		this.carpool = Carpools.findOne(this.carpoolId);
 	          	});
 	      });
+	}
+
+	saveCarpool(){
+		Carpools.update(
+		this.carpool._id,
+		{
+			$set: {
+				Time: this.carpool.Time, 
+				From: this.carpool.From, 
+				To: this.carpool.To, 
+				Provider: this.carpool.Provider, 
+				Contact : this.carpool.Contact
+			}
+		}
+		);
 	}
 }
