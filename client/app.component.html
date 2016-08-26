@@ -1,1 +1,10 @@
-Provide Car Pool!
+<div>
+  <ul>
+    <li *ngFor="let carpool of carpools">
+      Provider: {{carpool.Provider}}
+      <p>Time: {{carpool.Time}}</p>
+      <p>From: {{carpool.From}}</p>
+      <p>To: {{carpool.To}}</p>
+    </li>
+  </ul>
+</div>
