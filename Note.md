@@ -178,8 +178,8 @@ Ng2-Pagination consists of three main parts:
 
 ###9.  [tmeasday:publish-counts](https://github.com/percolatestudio/publish-counts)
 
+##Step 13. Using and creating AngularJS filters
+###1.  $nin, $ne
+Notice that we've made use of a special Mongo selector $nin, meaning "not in", to sift out users that have already been invited to this carpool so far. We used $ne to select ids that are "not equal" to the user's id.
 
-
-
-
-
+###2.  Implementing Pipes

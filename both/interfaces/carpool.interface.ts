@@ -7,4 +7,5 @@ export interface Carpool {
 	Contact : string;
 	owner?: string;
 	public: boolean;
+	invited?: string[];
 }
